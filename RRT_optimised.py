@@ -155,7 +155,8 @@ class RRT(MapGenerator):
             if i < len(self.path):
                 if self.obstacle_hit(current_node, self.path[i]): #if 2 nodes when directly joined, do not hit the obstacle, it is bypassed and will not travel the nodes in between
                     plt.plot([current_node[0], self.path[i-1][0]], [current_node[1], self.path[i-1][1]], color='green', linewidth=2)
-                    current_node = self.path[i]
+                    current_node = self.path[i-1]
+                    # i += 1
                 
                 else:
                     i += 1
